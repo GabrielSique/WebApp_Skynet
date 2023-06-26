@@ -1,0 +1,106 @@
+﻿@model Seminario.Models.User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateU</title>
+</head>
+<body>
+    <div>
+        <h4>Actualizar Usuario</h4>
+        <hr />
+        <form form action="@Url.Action("UpdateUser","Home")" method="post" name="updateForm">
+            <div class="input-group mb-2">
+                <select name="idRol" required id="selectRol" style="color: white;">
+                    <option disabled selected value="">Selecciona tipo de usuario</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Supervisor</option>
+                    <option value="3">Tecnico</option>
+                </select>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <select name="statusUser" required id="selectStatus" style="color: white;">
+                    <option disabled selected value="">Seleccione estado usuario</option>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>ID User</span>
+                <input type="text" name="idUser" class="form-control input_user" value="@Model.idUser" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Nombre</span>
+                <input type="text" name="firstName" class="form-control input_user" value="@Model.firstName" readonly>
+            </div>
+            <br />
+            <span>Primer apellido</span>
+            <div class="input-group mb-2">
+                <input type="text" name="surName" class="form-control input_user" value="@Model.surName" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Segundo Apellido</span>
+                <input type="text" name="secondSurName" class="form-control input_user" value="@Model.secondSurName" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Direccion</span>
+                <input type="text" name="direction" class="form-control input_user" value="@Model.direction">
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Celular</span>
+                <input type="text" name="phoneNumber" class="form-control input_user" value="@Model.phoneNumber">
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>No. Identificacion</span>
+                <input type="text" name="dni" class="form-control input_user" value="@Model.dni" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Correo</span>
+                <input type="text" name="email" class="form-control input_user" value="@Model.email" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Nit</span>
+                <input type="text" name="nit" class="form-control input_user" value="@Model.nit" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Nombre Empresa</span>
+                <input type="text" name="businessName" class="form-control input_user" value="@Model.businessName">
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Contraseña</span>
+                <input type="password" name="passwordUser" class="form-control input_user" value="">
+            </div>
+            <br />
+            <div class="d-flex justify-content-center mt-3 login_container">
+                <button type="submit" name="button" class="btn login_btn" style="width: 100px;">Actualizar</button>
+            </div>
+            <script>
+                function validarFormulario() {
+                    var selectElement = document.getElementById("selectRol");
+                    var selectElement = document.getElementById("selectStatus");
+                    if (selectElement.value === "") {
+                        alert("Por favor, selecciona un tipo de usuario o el estatus");
+                        return; // Evita continuar con el envío del formulario si la validación no se cumple
+                    } else {
+                        // Si se cumple la validación, puedes enviar el formulario
+                        document.forms["updateForm"].submit();
+                    }
+                }
+            </script>
+        </form>
+    </div>
+</body>
+</html>

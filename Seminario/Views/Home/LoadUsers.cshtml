@@ -1,0 +1,92 @@
+﻿@model List<Seminario.Models.User>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoadUsers</title>
+    <link href="~/Content/css/tabla.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h1>Empleados SKYNET</h1>
+        <hr />
+        <div id="usersContainer">
+            <div class="user">
+                <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+
+                    th, td {
+                        padding: 10px;
+                        text-align: left;
+                        border-bottom: 3px solid #ddd;
+                    }
+
+                    th {
+                        background-color: #f2f2f2;
+                    }
+                </style>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id Usuario</th>
+                            <th>Nombre</th>
+                            <th>Primer Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Nombre Completo</th>
+                            <th>Email</th>
+                            <th>Numero Celular</th>
+                            <th>Empresa</th>
+                            <th>Estado</th>
+                            <th>Rol Usuario</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                            {
+                            <tr>
+                                <td>@user.idUser</td>
+                                <td>@user.firstName</td>
+                                <td>@user.surName</td>
+                                <td>@user.secondSurName</td>
+                                <td>@user.userName</td>
+                                <td>@user.email</td>
+                                <td>@user.phoneNumber</td>
+                                <td>@user.businessName</td>
+                                <td>@user.statusName</td>
+                                <td>@user.rolName</td>
+                                <td>
+                                    <a href="@Url.Action("UpdateU", "Home", new {idUser = user.idUser,
+                                        firstName = user.firstName,
+                                        surName = user.surName,
+                                        secondSurName = user.secondSurName,
+                                        direction = user.direction,
+                                        phoneNumber = user.phoneNumber,
+                                        dni = user.dni,
+                                        email = user.email, 
+                                        nit = user.nit,
+                                        businessName = user.businessName,
+                                        idRol = user.idRol,
+                                        statusUser = user.statusUser})" class="btn btn-primary">
+                                        Editar
+                                    </a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                </td>
+                            </tr>
+                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

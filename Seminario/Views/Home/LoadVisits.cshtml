@@ -1,0 +1,70 @@
+﻿@model List<Seminario.Models.AssignmentVisits>
+
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>LoadVisits</title>
+    </head>
+    <body>
+        <div>
+            <h1>Visitas Programadas</h1>
+            <hr />
+            <div id="usersContainer">
+                <div class="client">
+                    <style>
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+
+                        th, td {
+                            padding: 10px;
+                            text-align: left;
+                            border-bottom: 3px solid #ddd;
+                        }
+
+                        th {
+                            background-color: #f2f2f2;
+                        }
+                    </style>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No. Visita</th>
+                                <th>Tecnico</th>
+                                <th>Supervisor</th>
+                                <th>Cliente</th>
+                                <th>Ubicacion</th>
+                                <th>Motivo de visita</th>
+                                <th>Feche creacion</th>
+                                <th>Fecha programada</th>
+                                <th>Estado visita</th>
+                                <th>Fecha iniciada</th>
+                                <th>Fecha finalizada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var visita in Model)
+                            {
+                                <tr>
+                                    <td>@visita.idVisitAssigned</td>
+                                    <td>@visita.nameTechnical</td>
+                                    <td>@visita.nameSupervisor</td>
+                                    <td>@visita.nameClient</td>
+                                    <td>@visita.ubication</td>
+                                    <td>@visita.reasonVisit</td>
+                                    <td>@visita.registerDate</td>
+                                    <td>@visita.visitSchedule</td>
+                                    <td>@visita.nameStatusVisit</td>
+                                    <td>@visita.arrivalVisit</td>
+                                    <td>@visita.visitFinished</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

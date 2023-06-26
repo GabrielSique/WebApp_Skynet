@@ -1,0 +1,87 @@
+﻿@model List<Seminario.Models.Client>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoadClients</title>
+</head>
+<body>
+    <div>
+        <h1>Clientes</h1>
+        <hr />
+        <div id="usersContainer">
+            <div class="client">
+                <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+
+                    th, td {
+                        padding: 10px;
+                        text-align: left;
+                        border-bottom: 3px solid #ddd;
+                    }
+
+                    th {
+                        background-color: #f2f2f2;
+                    }
+                </style>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id Cliente</th>
+                            <th>Nombre</th>
+                            <th>Primer Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Nombre Completo Propietario</th>
+                            <th>Email</th>
+                            <th>Numero Celular</th>
+                            <th>Empresa</th>
+                            <th>Estado</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var client in Model)
+                        {
+                            <tr>
+                                <td>@client.idClient</td>
+                                <td>@client.firstName</td>
+                                <td>@client.surName</td>
+                                <td>@client.secondSurName</td>
+                                <td>@client.userName</td>
+                                <td>@client.email</td>
+                                <td>@client.phoneNumber</td>
+                                <td>@client.businessName</td>
+                                <td>@client.statusName</td>
+                                <td>
+                                    <a href="@Url.Action("UpdateC", "Home", new {idClient = client.idClient,
+                                        firstName = client.firstName,
+                                        surName = client.surName,
+                                        secondSurName = client.secondSurName,
+                                        direction = client.direction,
+                                        phoneNumber = client.phoneNumber,
+                                        dni = client.dni,
+                                        email = client.email,
+                                        nit = client.nit,
+                                        businessName = client.businessName,
+                                        statusClient = client.statusClient})" class="btn btn-primary">
+                                        Editar
+                                    </a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

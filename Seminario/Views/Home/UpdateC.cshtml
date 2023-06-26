@@ -1,0 +1,79 @@
+﻿@model Seminario.Models.Client
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateU</title>
+</head>
+<body>
+    <div>
+        <h4>Actualizar Cliente</h4>
+        <hr />
+        <form form action="@Url.Action("UpdateClient","Home")" method="post">
+            <div class="input-group mb-2">
+                <select name="statusClient" required style="color: white;">
+                    <option>Seleccione estado cliente</option>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>ID Cliente</span>
+                <input type="text" name="idClient" class="form-control input_user" value="@Model.idClient" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Nombre</span>
+                <input type="text" name="firstName" class="form-control input_user" value="@Model.firstName">
+            </div>
+            <br />
+            <span>Primer apellido</span>
+            <div class="input-group mb-2">
+                <input type="text" name="surName" class="form-control input_user" value="@Model.surName">
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Segundo Apellido</span>
+                <input type="text" name="secondSurName" class="form-control input_user" value="@Model.secondSurName">
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Direccion</span>
+                <input type="text" name="direction" class="form-control input_user" value="@Model.direction">
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Celular</span>
+                <input type="text" name="phoneNumber" class="form-control input_user" value="@Model.phoneNumber">
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>No. Identificacion</span>
+                <input type="text" name="dni" class="form-control input_user" value="@Model.dni" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Correo</span>
+                <input type="text" name="email" class="form-control input_user" value="@Model.email" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Nit</span>
+                <input type="text" name="nit" class="form-control input_user" value="@Model.nit" readonly>
+            </div>
+            <br />
+            <div class="input-group mb-2">
+                <span>Nombre Empresa</span>
+                <input type="text" name="businessName" class="form-control input_user" value="@Model.businessName">
+            </div>
+            <br />
+            <div class="d-flex justify-content-center mt-3 login_container">
+                <button type="submit" name="button" class="btn login_btn" style="width: 100px;">Actualizar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

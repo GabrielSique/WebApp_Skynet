@@ -1,0 +1,89 @@
+﻿@model  Seminario.Models.User
+
+<!DOCTYPE html>
+
+    <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>LoadUsers</title>
+            <link href="~/Content/css/tabla.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div>
+                <h1>Registrar Visita</h1>
+                <hr />
+                <form action="@Url.Action("RegisterVisits","Home")" method="post" name="registroForm">
+                    <div id="usersContainer">
+                        @*<label>Seleccione un Tecnico</label>
+        <br />
+        <div class="user" style="color: white;">
+            @Html.DropDownListFor(model => model.idUser, ViewData["listTechnicals"] as IEnumerable<SelectListItem>, new { @class = "form-select" })
+        </div>
+        <br />
+        <label>Seleccione un Supervisor</label>
+        <br />
+        <div class="user" style="color: white;">
+            @Html.DropDownListFor(model => model.idUser, ViewData["listSupervisors"] as IEnumerable<SelectListItem>, new { @class = "form-select" })
+        </div>
+        <br />*@
+                        <div class="input-group mb-2">
+                            <select name="statusVisit" required id="selectstatusVisit" style="color: white;">
+                                <option disabled selected value="">Selecciona estado de la visita</option>
+                                <option value="1">Pendiente</option>
+                                <option value="2">En proceso</option>
+                                <option value="3">Finalizada</option>
+                            </select>
+                        </div>
+                        <br />
+                        <label>Tecnico:</label>
+                        <div class="input-group mb-2">
+                            <input type="text" name="idTechnical" required class="form-control input_user" value="" placeholder="ID Tecnico">
+                        </div>
+                        <br />
+                        <label>Cliente:</label>
+                        <div class="input-group mb-2">
+                            <input type="text" name="idClient" required class="form-control input_user" value="" placeholder="ID Cliente">
+                        </div>
+                        <br />
+                        <label>Supervisor:</label>
+                        <div class="input-group mb-2">
+                            <input type="text" name="idSupervisor" required class="form-control input_user" value="" placeholder="ID Supervisor">
+                        </div>
+                        <br />
+                        <label>Ubicacion:</label>
+                        <div class="input-group mb-2">
+                            <input type="text" name="ubication" required class="form-control input_user" value="" placeholder="Ubicacion">
+                        </div>
+                        <br />
+                        <label>Motivo de visita:</label>
+                        <div class="input-group mb-2">
+                            <input type="text" name="reasonVisit" required class="form-control input_user" value="" placeholder="Motivo de visita">
+                        </div>
+                        <br />
+                        <label>Fecha de programación:</label>
+                        <div class="input-group mb-2">
+                            <input type="date" name="visitSchedule" required class="form-control input_user" placeholder="Fecha programada">
+                        </div>
+                        <br />
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <button type="button" name="button" class="btn login_btn" style="width: 200px;" onclick="validarFormulario()">Registrar</button>
+                        </div>
+                        <script>
+                            function validarFormulario() {
+                                var selectElement = document.getElementById("selectstatusVisit");
+                                if (selectElement.value === "") {
+                                    alert("Por favor, seleccione los datos");
+                                    return; // Evita continuar con el envío del formulario si la validación no se cumple
+                                } else {
+                                    // Si se cumple la validación, puedes enviar el formulario
+                                    document.forms["registroForm"].submit();
+                                }
+                            }
+                        </script>
+                    </div>
+                </form>
+            </div>
+        </body>
+    </html>
+
+
