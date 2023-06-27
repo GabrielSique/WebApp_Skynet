@@ -48,7 +48,7 @@ namespace Seminario.Controllers
                 dataAuth.nit = Request.Form["nit"];
                 dataAuth.idRol = Request.Form["idRol"];
 
-                string url = "https://localhost:7168/api/Users/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/Users/";
                 var client = new HttpClient();
 
                 client.BaseAddress = new System.Uri(url);
@@ -81,7 +81,7 @@ namespace Seminario.Controllers
             {
 
                 HttpResponseMessage result;
-                string url = "https://localhost:7168/api/Users/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/Users/";
                 var client = new HttpClient();
                 client.BaseAddress = new System.Uri(url);
                 Task<HttpResponseMessage> postTask = client.GetAsync("GetAllUsers");
@@ -147,7 +147,7 @@ namespace Seminario.Controllers
                 dataAuth.idRol = Request.Form["idRol"];
                 dataAuth.statusUser = Request.Form["statusUser"];
 
-                string url = "https://localhost:7168/api/Users/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/Users/";
                 var client = new HttpClient();
 
                 client.BaseAddress = new System.Uri(url);
@@ -200,7 +200,7 @@ namespace Seminario.Controllers
                 dataAuth.businessName = Request.Form["businessName"];
                 dataAuth.nit = Request.Form["nit"];
 
-                string url = "https://localhost:7168/api/Client/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/Client/";
                 var client = new HttpClient();
 
                 client.BaseAddress = new System.Uri(url);
@@ -233,7 +233,7 @@ namespace Seminario.Controllers
             {
 
                 HttpResponseMessage result;
-                string url = "https://localhost:7168/api/Client/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/Client/";
                 var client = new HttpClient();
                 client.BaseAddress = new System.Uri(url);
                 Task<HttpResponseMessage> postTask = client.GetAsync("GetAllClients");
@@ -297,7 +297,7 @@ namespace Seminario.Controllers
                 dataAuth.businessName = Request.Form["businessName"];
                 dataAuth.statusClient = Request.Form["statusClient"];
 
-                string url = "https://localhost:7168/api/Client/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/Client/";
                 var client = new HttpClient();
 
                 client.BaseAddress = new System.Uri(url);
@@ -401,7 +401,7 @@ namespace Seminario.Controllers
                 dataAuth.visitSchedule = Request.Form["visitSchedule"];
                 
 
-                string url = "https://localhost:7168/api/AssignamentVisits/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/AssignamentVisits/";
                 var client = new HttpClient();
 
                 client.BaseAddress = new System.Uri(url);
@@ -434,7 +434,7 @@ namespace Seminario.Controllers
             {
 
                 HttpResponseMessage result;
-                string url = "https://localhost:7168/api/AssignamentVisits/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/AssignamentVisits/";
                 var client = new HttpClient();
                 client.BaseAddress = new System.Uri(url);
                 Task<HttpResponseMessage> postTask = client.GetAsync("GetAllVisits");

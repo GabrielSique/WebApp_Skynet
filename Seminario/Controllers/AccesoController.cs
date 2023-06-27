@@ -40,7 +40,7 @@ namespace Seminario.Controllers
                 dataAuth.nameUser = "";
                 dataAuth.rolName = "";
 
-                string url = "https://localhost:7168/api/Authenticator/";
+                string url = "https://skynetapiseminario.azurewebsites.net/api/Authenticator/";
                 Authenticator obj_GetResApi;
                 var client = new HttpClient();
 
