@@ -24,11 +24,6 @@ namespace Seminario.Controllers
             return View();
         }
 
-        //public ActionResult Register()
-        //{
-        //    return View();
-        //}
-
         public async Task<ActionResult> Authenticator()
         {
             try
@@ -51,7 +46,6 @@ namespace Seminario.Controllers
                 result = postTask.Result;
                 string jsonResposne = result.Content.ReadAsStringAsync().Result;
 
-                //obj_GetResApi = result.Content.ReadAsAsync<Aunthenticator>();
                 ResponseApi<Authenticator> resposne = JsonConvert.DeserializeObject<ResponseApi<Authenticator>>(jsonResposne);
                 obj_GetResApi = resposne.data;
 
@@ -80,53 +74,6 @@ namespace Seminario.Controllers
             }
         }
 
-        //public async Task<ActionResult> RegisterUser()
-        //{
-        //    try
-        //    {
-        //        HttpResponseMessage result;
-        //        User dataAuth = new User();
-
-        //        dataAuth.passwordUser = Request.Form["passwordUser"];
-        //        dataAuth.firstName = Request.Form["firstName"];
-        //        dataAuth.surName = Request.Form["surName"];
-        //        dataAuth.secondSurName = Request.Form["secondSurName"];
-        //        dataAuth.direction = Request.Form["direction"];
-        //        dataAuth.phoneNumber = Request.Form["phoneNumber"];
-        //        dataAuth.dni = Request.Form["dni"];
-        //        dataAuth.email = Request.Form["email"];
-        //        dataAuth.businessName = Request.Form["businessName"];
-        //        dataAuth.nit = Request.Form["nit"];
-        //        dataAuth.idRol = Request.Form["idRol"];
-
-        //        string url = "https://localhost:7168/api/Users/";
-        //        //User obj_GetResApi;
-        //        var client = new HttpClient();
-
-        //        client.BaseAddress = new System.Uri(url);
-        //        Task<HttpResponseMessage> postTask = client.PostAsJsonAsync("AddUser", dataAuth);
-        //        postTask.Wait();
-
-        //        result = postTask.Result;
-        //        string jsonResposne = result.Content.ReadAsStringAsync().Result;
-
-        //        ResponseApi<User> resposne = JsonConvert.DeserializeObject<ResponseApi<User>>(jsonResposne);
-        //        //obj_GetResApi = resposne.description;
-
-        //        if (result.IsSuccessStatusCode)
-        //        {
-        //            return RedirectToAction("Register", "Acceso");
-        //        }
-        //        else
-        //        {
-        //            return RedirectToAction("Error", "Home");
-        //        }
-        //    }
-        //    catch (System.Exception)
-        //    {
-        //        return RedirectToAction("Error", "Home");
-        //    }
-        //}
 
     }
 }
